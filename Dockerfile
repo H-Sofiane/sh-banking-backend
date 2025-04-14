@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:21-jdk-slim
-COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar /app/demo.jar
+COPY --from=build /target/shbanking-backend-0.0.1-SNAPSHOT.jar /app/demo.jar
 EXPOSE 8085
 ENTRYPOINT [ "java","jar","shbanking-backend.jar" ]
